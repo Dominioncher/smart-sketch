@@ -209,4 +209,6 @@ if __name__ == "__main__":
     if verbose:
         print(options)
     app = MainApplication(**options)
-    app.run()
+    http_server = tornado.httpserver.HTTPServer(app)
+    http_server.listen(options.port)
+    tornado.ioloop.IOLoop.instance().start()
