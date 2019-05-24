@@ -176,10 +176,9 @@ class MainApplication(tornado.web.Application):
 
     def run(self):
         try:
-            # signal.signal(signal.SIGINT, self.signal_handler)
+            signal.signal(signal.SIGINT, self.signal_handler)
             self.listen(self.port, self.address)
-            # tornado.ioloop.PeriodicCallback(self.try_exit, 100).start()
-            self.ioloop.start()
+            tornado.ioloop.PeriodicCallback(self.try_exit, 100).start()
 
         except socket.error as e:
             self.logger.fatal("Unable to listen on {}:{} = {}".format(
@@ -209,6 +208,4 @@ if __name__ == "__main__":
     if verbose:
         print(options)
     app = MainApplication(**options)
-    http_server = tornado.httpserver.HTTPServer(app)
-    http_server.listen(8080)
-    tornado.ioloop.IOLoop.instance().start()
+    app.run()
