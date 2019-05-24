@@ -1,6 +1,5 @@
 node_modules/
 __pycache__/
-.idea
 tags
 *.bk
 venv/
@@ -46,6 +45,7 @@ fonts/
 
 HackSC/
 env/
+*.png
 
 
 

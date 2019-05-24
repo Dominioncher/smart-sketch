@@ -1,10 +1,8 @@
-
 # Tornado is more robust - consider using over Flask if do not need to worry about templates?
 
 import base64
 import logging
 import os
-import shutil
 import socket
 import subprocess
 import sys
@@ -83,11 +81,9 @@ def make_processable(greyscale_fname, output_color_file):
     ouptut_greyscale_file_labels = LABEL_FOLDER + "/" + greyscale_fname
 
     copy_file(ouptut_greyscale_file, ouptut_greyscale_file_labels)
-    # shutil.copyfile(ouptut_greyscale_file, ouptut_greyscale_file_labels)
 
     ouptut_greyscale_file_img = IMG_FOLDER + "/" + greyscale_fname
     copy_file(ouptut_greyscale_file, ouptut_greyscale_file_img)
-    # shutil.copyfile(ouptut_greyscale_file, ouptut_greyscale_file_img)
 
 # def export_image(greyscale_fname):
 #     current_image_location = EXPORT_LOCATION + "/" + greyscale_fname
@@ -195,10 +191,10 @@ if __name__ == "__main__":
         default=False,
         help="Enable debugging mode."
     )
-    tornado.options.define('port', default=8080, help='Port to listen on.')
+    tornado.options.define('port', default=80, help='Port to listen on.')
     host = "0.0.0.0"
     if sys.platform == "win32":
-        host = "localhost"
+        host = "127.0.0.1"
     tornado.options.define('address', default=host, help='Url')
 
     tornado.options.define('template_path', default=os.path.join(
