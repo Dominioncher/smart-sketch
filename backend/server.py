@@ -47,7 +47,7 @@ def check_for_dataset_folder():
 
 
 def parse_static_filepath(filepath):
-    split_filepath = filepath.split('\\')
+    split_filepath = filepath.split('/')
     while len(split_filepath) > 2:
         split_filepath.pop(0)
 
@@ -82,12 +82,12 @@ def make_processable(greyscale_fname, output_color_file):
 
     ouptut_greyscale_file_labels = LABEL_FOLDER + "/" + greyscale_fname
 
-    # copy_file(ouptut_greyscale_file, ouptut_greyscale_file_labels)
-    shutil.copyfile(ouptut_greyscale_file, ouptut_greyscale_file_labels)
+    copy_file(ouptut_greyscale_file, ouptut_greyscale_file_labels)
+    # shutil.copyfile(ouptut_greyscale_file, ouptut_greyscale_file_labels)
 
     ouptut_greyscale_file_img = IMG_FOLDER + "/" + greyscale_fname
-    # copy_file(ouptut_greyscale_file, ouptut_greyscale_file_img)
-    shutil.copyfile(ouptut_greyscale_file, ouptut_greyscale_file_img)
+    copy_file(ouptut_greyscale_file, ouptut_greyscale_file_img)
+    # shutil.copyfile(ouptut_greyscale_file, ouptut_greyscale_file_img)
 
 # def export_image(greyscale_fname):
 #     current_image_location = EXPORT_LOCATION + "/" + greyscale_fname
