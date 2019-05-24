@@ -207,6 +207,4 @@ if __name__ == "__main__":
     if verbose:
         print(options)
     app = MainApplication(**options)
-    # app.run()
-    app.listen(8888)
-    tornado.ioloop.IOLoop.current().start()
+    app.run()
