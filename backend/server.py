@@ -10,6 +10,7 @@ import sys
 import uuid
 from test import run
 
+import tornado
 import tornado.ioloop
 import tornado.options
 import tornado.web
@@ -206,4 +207,6 @@ if __name__ == "__main__":
     if verbose:
         print(options)
     app = MainApplication(**options)
-    app.run()
+    # app.run()
+    app.listen(8888)
+    tornado.ioloop.IOLoop.current().start()
