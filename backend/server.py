@@ -179,7 +179,7 @@ class MainApplication(tornado.web.Application):
             signal.signal(signal.SIGINT, self.signal_handler)
             self.listen(self.port, self.address)
             # tornado.ioloop.PeriodicCallback(self.try_exit, 100).start()
-            tornado.ioloop.instance().start()
+            tornado.ioloop.IOLoop.current().start()
 
         except socket.error as e:
             self.logger.fatal("Unable to listen on {}:{} = {}".format(
