@@ -188,7 +188,7 @@ if __name__ == "__main__":
     check_for_dataset_folder()
     tornado.options.define(
         "debug",
-        default=False,
+        default=True,
         help="Enable debugging mode."
     )
     tornado.options.define('port', default=80, help='Port to listen on.')
