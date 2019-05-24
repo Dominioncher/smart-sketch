@@ -3,6 +3,7 @@ __pycache__/
 tags
 *.bk
 venv/
+.idea/
 .vscode/
 __snapshots__/
 google-cloud-sdk

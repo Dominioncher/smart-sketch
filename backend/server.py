@@ -82,11 +82,9 @@ def make_processable(greyscale_fname, output_color_file):
 
     ouptut_greyscale_file_labels = LABEL_FOLDER + "/" + greyscale_fname
     copy_file(ouptut_greyscale_file, ouptut_greyscale_file_labels)
-    # shutil.copyfile(ouptut_greyscale_file, ouptut_greyscale_file_labels)
 
     ouptut_greyscale_file_img = IMG_FOLDER + "/" + greyscale_fname
     copy_file(ouptut_greyscale_file, ouptut_greyscale_file_img)
-    # shutil.copyfile(ouptut_greyscale_file, ouptut_greyscale_file_img)
 
 # def export_image(greyscale_fname):
 #     current_image_location = EXPORT_LOCATION + "/" + greyscale_fname
